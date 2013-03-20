@@ -1,0 +1,171 @@
+body {
+	padding:0px;
+	margin:0px;
+}
+p {
+	padding:0px;
+	margin:0px;
+}
+a {
+	text-decoration:none;
+}
+.content {
+	width:100%; height:100%;
+}
+.content2 {
+	width:75%; height:auto;
+	border: solid #1B3C2B 1px;
+	margin-top:10px;
+}
+.logo{
+	margin-top:10px;
+	width:33%;
+	float:center;
+}
+.title{
+	margin-top:30px;
+	float:left;
+	vertical-align:middle;
+	width:33%;
+}
+.info {
+	margin-top:-30px;
+	float:right;
+	width:33%;
+	font-size:16px;
+	margin-right:5px;
+}
+.header {
+	align: center;
+	width:95%;
+	font-family:Verdana;
+	font-weight:bold;
+	font-size:30px;
+	border: solid #1B3C2B 1px;
+	margin-top:25px;
+	color:#1B3C2B;
+	height:100px;
+}
+.fecha {
+	align: center;
+	width:95%;
+	font-family:Verdana;
+	font-weight:bold;
+	font-size:15px;
+	border: solid #1B3C2B 1px;
+	margin-top:25px;
+	color:White;
+	background-color:#1B3C2B;
+}
+.clock {
+	align: center;
+	font-family:Verdana;
+	font-weight:bold;
+	font-size:40px;
+	margin-top:0px;
+}
+.form {
+	font-family:Verdana;
+	font-weight:bold;
+	align: center;
+	width:95%;
+	border: solid #1B3C2B 1px;
+	margin-top:25px;
+}
+#rut {
+	width:100%;
+	font-size:25px;
+	text-align:center;
+}
+#nvis {
+	width:100%;
+	font-size:25px;
+	text-align:center;
+}
+#nanf {
+	width:100%;
+	margin-top:20px;
+	font-size:25px;
+	text-align:center;
+}
+#mvis {
+	width:100%;
+	font-size:25px;
+	text-align:center;
+}
+#vobs {
+	width:100%;
+	font-size:25px;
+	text-align:center;
+}
+#vbut {
+	width:100%;
+	margin-top:20px;
+	font-size:25px;
+	text-align:center;
+}
+/* LOGIN */
+#userr {
+	width:100%;
+	font-size:25px;
+	text-align:center;
+}
+#passs {
+	width:100%;
+	font-size:25px;
+	text-align:center;
+}
+#lbut {
+	width:100%;
+	margin-top:20px;
+	font-size:25px;
+	text-align:center;
+}
+#tr_cap {
+	font-size:10px;
+	font-style:italic;
+	padding:0px;
+	margin:0px;
+}
+/* LOGIN */
+.tabla1 {
+	font-family:Verdana;
+	align: center;
+	width:95%;
+	/*border: solid #1B3C2B 1px;*/
+	margin-top:25px;
+	margin-bottom:25px;
+}
+.tabla2 {
+	font-size:10px;
+	height:150px;
+	width:100%;
+	display:table;
+}
+.tabla5 {
+	font-size:10px;
+	width:100%;
+	display:table;
+}
+.tabla22 {
+	height:auto;
+	width:100%;
+}
+.tr1 {
+	font-weight:bold;
+	background-color:#1B3C2B;
+	color:white;
+}
+.tr0 {
+	padding:0px;
+	margin:0px;
+}
+.tabla2 td {
+	border: solid #1B3C2B 1px;
+	text-align:left;
+}
+.tabla2 tr:hover {
+	background-color:#1B3C2B;
+	color:white;
+	cursor:pointer;
+}
