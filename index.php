@@ -10,7 +10,7 @@
 		<div class="content" align="center">
 			<div class="content2" align="center">
 				<div class="header" align="center">
-					<div class="logo" align="center"><img src="img/lgdelsur.jpg" height="75px"/></div>
+					<div class="logo" align="center"><img src="img/lgdelsur.jpg" height="65px"/></div>
 				</div>
 				<div class="fecha" align="center">
 					<script type="text/javascript">
@@ -79,14 +79,18 @@ if ($_POST["oform"]) {
 		}
 
 		if ($adldap->authenticate($username, $password)){
+			session_start();
 			$uinfo = $adldap->user()->info($username);
 			$group = ($uinfo['0']['memberof']);
-
+			$utype = "";
 			foreach($group as $grp){
-				if (preg_match("/Auditoria Interna/i", $grp) || preg_match("/Secretaría/i", $grp)) {
-					session_start();
-					$_SESSION['start'] = time();
-					$_SESSION['expire'] = $_SESSION['start'] + (30 * 60) ; // 30 minutos...
+				if (preg_match("/Auditoria Interna/i", $grp) || preg_match("/Secretar/i", $grp)) {
+					if (preg_match("/Auditoria Interna/i", $grp)) {
+						$utype = 1;
+					} else {
+						$utype = 0;
+					}
+					$_SESSION['usertype'] = $utype;
 					$_SESSION["username"] = $username;
 					$_SESSION["userinfo"] = $adldap->user()->info($username);
 					$redir = "Location: http://" . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . "/recepcion.php";

@@ -28,11 +28,12 @@ function reloj(){
 $(document).ready(function() {
 	//rut
 	//$('#rut').numeric();
+	$('#rut').Rut({
+	  on_error: function(){ $("#rut").css("background-color", "#FF0000"); },
+	  on_success: function(){ $("#rut").css("background-color", "#FFFFFF"); }
+	});
 	$("#rut").click(function(){
 		$("#rut").val('');
-		$('#rut').Rut({
-		  format_on: 'keyup'
-		});
 	});
 	$("#rut").focus(function(){
 		$("#rut").val('');
@@ -42,11 +43,7 @@ $(document).ready(function() {
 		{
 			$("#rut").val('RUT VISITA');
 		}
-		$('#rut').Rut({
-		  on_error: function(){ alert('Rut incorrecto');
-		  $("#rut").val('RUT VISITA');
-		  }
-		});
+
 	});
 	//nvis
 	$("#nvis").click(function(){
@@ -109,6 +106,29 @@ $(document).ready(function() {
 		}
 	});
 });
+
+//search
+$(function() {
+	$("#nvis").autocomplete({
+		source: "inc/name_search.php",
+		minLength: 2,
+		remoteDataType: 'json',
+		select: function(event, ui) {
+			$('#rut').val(ui.item.abbrev);
+		}
+	});
+});
+$(function() {
+	$("#rut").autocomplete({
+		source: "inc/rut_search.php",
+		minLength: 2,
+		remoteDataType: 'json',
+		select: function(event, ui) {
+			$('#nvis').val(ui.item.abbrev);
+		}
+	});
+});
+	//search
 
 
 //case

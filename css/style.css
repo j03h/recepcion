@@ -51,7 +51,7 @@ a {
 	width:95%;
 	font-family:Verdana;
 	font-weight:bold;
-	font-size:15px;
+	font-size:13px;
 	border: solid #1B3C2B 1px;
 	margin-top:25px;
 	color:White;
@@ -61,7 +61,7 @@ a {
 	align: center;
 	font-family:Verdana;
 	font-weight:bold;
-	font-size:40px;
+	font-size:30px;
 	margin-top:0px;
 }
 .form {
@@ -74,51 +74,59 @@ a {
 }
 #rut {
 	width:100%;
-	font-size:25px;
+	font-size:20px;
 	text-align:center;
+	border: solid #1B3C2B 1px;
 }
 #nvis {
 	width:100%;
-	font-size:25px;
+	font-size:20px;
 	text-align:center;
+	border: solid #1B3C2B 1px;
 }
 #nanf {
 	width:100%;
 	margin-top:20px;
-	font-size:25px;
+	font-size:20px;
 	text-align:center;
+	border: solid #1B3C2B 1px;
 }
 #mvis {
 	width:100%;
-	font-size:25px;
+	font-size:20px;
 	text-align:center;
+	border: solid #1B3C2B 1px;
 }
 #vobs {
 	width:100%;
-	font-size:25px;
+	font-size:20px;
 	text-align:center;
+	border: solid #1B3C2B 1px;
 }
 #vbut {
 	width:100%;
 	margin-top:20px;
-	font-size:25px;
+	font-size:20px;
 	text-align:center;
+	border: solid #1B3C2B 1px;
 }
 /* LOGIN */
 #userr {
 	width:100%;
-	font-size:25px;
+	font-size:20px;
 	text-align:center;
+	border: solid #1B3C2B 1px;
 }
 #passs {
 	width:100%;
-	font-size:25px;
+	font-size:20px;
 	text-align:center;
+	border: solid #1B3C2B 1px;
 }
 #lbut {
 	width:100%;
 	margin-top:20px;
-	font-size:25px;
+	font-size:20px;
 	text-align:center;
 }
 #tr_cap {
