@@ -128,6 +128,13 @@ $(function() {
 		}
 	});
 });
+$(function() {
+	$("#nanf").autocomplete({
+		source: "inc/anf_search.php",
+		minLength: 2,
+		remoteDataType: 'json',
+	});
+});
 	//search
 
 
