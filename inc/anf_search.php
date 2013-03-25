@@ -6,7 +6,7 @@ $return_arr = array();
 
 if ($conn)
 {
-	$fetch = mysql_query("SELECT * FROM control where nombrea like '%" . mysql_real_escape_string($_GET['term']) . "%'");
+	$fetch = mysql_query("SELECT DISTINCT id, nombrea FROM control where nombrea like '%" . mysql_real_escape_string($_GET['term']) . "%' GROUP BY nombrea");
 
 	while ($row = mysql_fetch_array($fetch, MYSQL_ASSOC)) {
 		$row_array['id'] = $row['id'];
