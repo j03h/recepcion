@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include('sql.php');
 
 if (!empty($_GET) && isset($_GET)) {
@@ -215,7 +215,7 @@ if (!empty($_GET) && isset($_GET)) {
 
 
 						<?php
-						session_start();
+
 $exit = "";
 $delete = "";
 $sql = "SELECT * FROM control ORDER BY id DESC";

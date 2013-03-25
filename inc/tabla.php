@@ -1,7 +1,7 @@
 <?php
 
 include("sql.php");
-
+session_start();
 if (!empty($_GET) && isset($_GET)) {
     if (isset($_GET['updateSale']) && isset($_GET['id'])) {
         $hora = date("H:i:s");
@@ -22,7 +22,7 @@ if (!empty($_GET) && isset($_GET)) {
 }
 
 if (!empty($_POST) && isset($_POST)) {
-    session_start();
+
     $fecha = date("d-m-Y");
     $hora = date("H:i:s");
     $user = $_SESSION['username'];
