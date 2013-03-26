@@ -28,6 +28,13 @@ a {
 	vertical-align:middle;
 	width:33%;
 }
+.uinfo {
+	margin-top:-50px;
+	float:right;
+	width:33%;
+	font-size:12px;
+	margin-right:5px;
+}
 .info {
 	margin-top:-30px;
 	float:right;
