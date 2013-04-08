@@ -1,7 +1,7 @@
 <?php
 
 include("sql.php");
-session_start();
+//session_start();
 if (!empty($_GET) && isset($_GET)) {
     if (isset($_GET['updateSale']) && isset($_GET['id'])) {
         $hora = date("H:i:s");
@@ -25,7 +25,7 @@ if (!empty($_POST) && isset($_POST)) {
 
     $fecha = date("d-m-Y");
     $hora = date("H:i:s");
-    $user = $_SESSION['username'];
+    $user = $_COOKIE["username"];
     $rut = mysql_real_escape_string($_POST['rut']);
     $nvis = mysql_real_escape_string($_POST['nvis']);
     $nanf = mysql_real_escape_string($_POST['nanf']);
@@ -98,7 +98,7 @@ $result = mysql_query($sql);
 
 while ($row = mysql_fetch_array($result)) {
     if ($row['sale'] == "SALE") {
-        $exit = "<img name=\"sale\" id=\"sale\" src=\"img/exit.png\" width=\"16px\" onclick=\"updateSale('" . $row['id'] . "', '" . $_SESSION['username'] . "')\" />";
+        $exit = "<img name=\"sale\" id=\"sale\" src=\"img/exit.png\" width=\"16px\" onclick=\"updateSale('" . $row['id'] . "', '" . $_COOKIE["username"] . "')\" />";
         $exit2 = "SIN SALIDA";
         $euser = "SIN SALIDA";
     }else {

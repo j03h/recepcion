@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 include('sql.php');
 
 if (!empty($_GET) && isset($_GET)) {
@@ -224,12 +224,12 @@ $result = mysql_query($sql);
 
 while ($row = mysql_fetch_array($result)) {
 	if ($row['sale'] == "SALE") {
-		$exit = "<img name=\"sale\" id=\"sale\" src=\"img/exit.png\" width=\"16px\" onclick=\"updateSale2('" . $row['id'] . "', '" . $_SESSION['username'] . "')\" />";
+		$exit = "<img name=\"sale\" id=\"sale\" src=\"img/exit.png\" width=\"16px\" onclick=\"updateSale2('" . $row['id'] . "', '" . $_COOKIE["username"] . "')\" />";
 		$exit2 = "SIN SALIDA";
 		$euser = "SIN SALIDA";
 		$delete = "";
 	}else {
-		if($_SESSION['usertype'] == 1) {
+		if($_COOKIE["usertype"] == 1) {
 			$delete = " | <img name=\"undo\" id=\"undo\" src=\"img/undo.png\" width=\"16px\" onclick=\"undoHour('" . $row['id'] . "')\" />";
 		}
 		$exit = $row['sale'];

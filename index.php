@@ -56,11 +56,20 @@
 </html>
 <?php
 
+if(isset($_COOKIE["usertype"]) && isset($_COOKIE["username"]))
+{
+	$redir = "Location: http://" . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . "/recepcion.php";
+	header($redir);
+}
+
+
 $logout = $_GET['logout'];
 if ($logout == "yes") { //destroy the session
-	session_start();
-	$_SESSION = array();
-	session_destroy();
+	//session_start();
+	//$_SESSION = array();
+	//session_destroy();
+	setcookie("usertype", "", time() - 3600, "/", "", false, true);
+	setcookie("username", "", time() - 3600, "/", "", false, true);
 	$redir = "Location: http://" . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . "/";
 	header($redir);
 }
@@ -79,7 +88,7 @@ if ($_POST["oform"]) {
 		}
 
 		if ($adldap->authenticate($username, $password)){
-			session_start();
+			//session_start();
 			$uinfo = $adldap->user()->info($username);
 			$group = ($uinfo['0']['memberof']);
 			$utype = "";
@@ -90,9 +99,12 @@ if ($_POST["oform"]) {
 					} else {
 						$utype = 0;
 					}
-					$_SESSION['usertype'] = $utype;
-					$_SESSION["username"] = $username;
-					$_SESSION["userinfo"] = $adldap->user()->info($username);
+					//$_SESSION['usertype'] = $utype;
+					//$_SESSION["username"] = $username;
+					//$_SESSION["userinfo"] = $adldap->user()->info($username);
+					setcookie("usertype", $utype, time()+60*60*24*2, "/", "", false, true);
+					setcookie("username", $username, time()+60*60*24*2, "/", "", false, true);
+					//setcookie("userinfo", $adldap->user()->info($username), time()+60*60*24*2, "/", "", false, true);
 					$redir = "Location: http://" . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . "/recepcion.php";
 					header($redir);
 					exit;

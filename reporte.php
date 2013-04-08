@@ -1,7 +1,7 @@
 <?php
-session_start();
+//session_start();
 
-if (!isset($_SESSION["username"])) {
+if (!isset($_COOKIE["username"])) {
     echo "Ingrese nuevamente por favor.";
     header("Location: index.php");
 }

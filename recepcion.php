@@ -1,7 +1,7 @@
 <?php
-session_start();
+//session_start();
 
-if (!isset($_SESSION["username"])) {
+if (!isset($_COOKIE["username"])) {
     echo "Ingrese nuevamente por favor.";
     header("Location: index.php");
 }
@@ -49,7 +49,7 @@ include("inc/adLDAP/src/adLDAP.php");
 			<div class="content2" align="center">
 				<div class="header" align="center">
 					<div class="logo" align="center"><img src="img/lgdelsur.jpg" height="65px"/></div>
-					<div class="uinfo" align="right"><?php echo $_SESSION["username"]; ?></div>
+					<div class="uinfo" align="right"><?php echo $_COOKIE["username"]; ?></div>
 					<div class="info" align="right"><a href="recepcion.php"><img title="Refrescar" src="img/refresh.png" width="30px"  /></a> <a href="reporte.php"><img title="Reporte" src="img/table.png" width="30px"  /></a> <a href="index.php?logout=yes"><img title="Salir" src="img/exit.png" width="29px"  /></a></div>
 				</div>
 				<div class="fecha" align="center">

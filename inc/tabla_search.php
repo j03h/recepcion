@@ -14,7 +14,7 @@ if (isset($_GET['keyword']) && isset($_GET['tabla'])) {
     if ($result) {
         while ($row = mysql_fetch_array($result)) {
             if ($row['sale'] == "SALE") {
-                $exit = "<img name=\"sale\" id=\"sale\" src=\"img/exit.png\" width=\"16px\" onclick=\"updateSale2('" . $row['id'] . "', '" . $_SESSION['username'] . "')\" />";
+                $exit = "<img name=\"sale\" id=\"sale\" src=\"img/exit.png\" width=\"16px\" onclick=\"updateSale2('" . $row['id'] . "', '" . $_COOKIE["username"] . "')\" />";
                 $exit2 = "SIN SALIDA";
                 $euser = "SIN SALIDA";
             }else {
